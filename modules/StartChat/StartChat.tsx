@@ -5,7 +5,7 @@ export default function StartChat() {
 	return (
 		<>
 			<div className="grid w-full h-dvh place-items-center">
-				<div className="grid gap-[20px] place-items-center w-full">
+				<div className="grid gap-[30px] place-items-center w-full">
 					<Title></Title>
 					<Input></Input>
 				</div>
