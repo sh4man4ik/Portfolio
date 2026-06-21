@@ -1,6 +1,10 @@
 import type { Config } from 'vike/types';
 import getText from '../shared/texts/texts';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import vikeReact from 'vike-react/config';
+
+gsap.registerPlugin(useGSAP);
 
 // Default config (can be overridden by pages)
 // https://vike.dev/config

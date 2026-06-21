@@ -13,7 +13,7 @@ const EN_TEXTS = {
 	startChat: {
 		title: 'How can I help?',
 		input: {
-			placeholder: 'How can I help you today?'
+			placeholder: 'What would you like to know?'
 		},
 		select: {
 			options: {
