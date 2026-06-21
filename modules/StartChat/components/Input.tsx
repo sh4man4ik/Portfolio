@@ -16,6 +16,7 @@ export default function Input(props: any) {
 						defaultValue={getText('startChat.select.options.first')}
 						className="select outline-none border-none w-fit rounded-lg small-font bg-base-300"
 						suppressHydrationWarning={true}
+						onChange={(event) => props.setSelectValue(event.target.value)}
 					>
 						<option>{getText('startChat.select.options.first')}</option>
 						<option>{getText('startChat.select.options.second')}</option>
