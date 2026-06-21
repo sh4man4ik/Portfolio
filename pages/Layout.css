@@ -7,13 +7,13 @@ body {
 	font-family: 'Inter', sans-serif;
 }
 
+.large-font {
+	font-size: 28px;
+}
 @media (min-width: 640px) {
 	.large-font {
 		font-size: 36px;
 	}
-}
-.large-font {
-	font-size: 28px;
 }
 
 .medium-font {
