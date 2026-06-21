@@ -4,7 +4,7 @@ import getText from '../../../shared/texts/texts';
 export default function Input(props: any) {
 	return (
 		<>
-			<div className="grid pt-[10px] p-[15px] bg-base-200 rounded-xl gap-[15px] max-w-[500px] w-[80%]">
+			<div className="grid pt-[10px] p-[15px] bg-base-200 rounded-xl gap-[15px] max-w-[500px] w-[80%] mb-[20px]">
 				<input
 					type="text"
 					placeholder={getText('startChat.input.placeholder')}
