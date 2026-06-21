@@ -14,7 +14,7 @@ export default function Input() {
 				<div className="flex justify-between">
 					<select
 						defaultValue={getText('startChat.select.options.first')}
-						className="select outline-none border-none w-fit rounded-lg small-font"
+						className="select outline-none border-none w-fit rounded-lg small-font bg-base-300"
 						suppressHydrationWarning={true}
 					>
 						<option>{getText('startChat.select.options.first')}</option>
@@ -23,7 +23,7 @@ export default function Input() {
 						<option>{getText('startChat.select.options.fourth')}</option>
 					</select>
 
-					<button className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-base-100 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 border-none">
+					<button className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-md bg-base-300 backdrop-blur-lg px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 border-none">
 						<RiArrowUpLine size={16} />
 						<div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
 							<div className="relative h-full w-10 bg-white/20"></div>
