@@ -1,7 +1,9 @@
+import StartChat from '../../modules/StartChat';
+
 export default function Page() {
 	return (
 		<>
-			<p>Hello</p>
+			<StartChat></StartChat>
 		</>
 	);
 }

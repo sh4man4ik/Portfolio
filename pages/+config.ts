@@ -1,4 +1,5 @@
 import type { Config } from 'vike/types';
+import getText from '../shared/texts/texts';
 import vikeReact from 'vike-react/config';
 
 // Default config (can be overridden by pages)
@@ -6,7 +7,7 @@ import vikeReact from 'vike-react/config';
 
 const config: Config = {
 	// https://vike.dev/head-tags
-	title: 'Portfolio',
+	title: getText('title'),
 	description: '',
 
 	extends: [vikeReact],
