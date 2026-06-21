@@ -1,7 +1,7 @@
 import { RiArrowUpLine } from '@remixicon/react';
 import getText from '../../../shared/texts/texts';
 
-export default function Input() {
+export default function Input(props: any) {
 	return (
 		<>
 			<div className="grid pt-[10px] p-[15px] bg-base-200 rounded-xl gap-[15px] max-w-[500px] w-[80%]">
@@ -23,7 +23,11 @@ export default function Input() {
 						<option>{getText('startChat.select.options.fourth')}</option>
 					</select>
 
-					<button className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-[#8E3E63] px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 border-none">
+					<button
+						className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-[#8E3E63] px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 border-none"
+						suppressHydrationWarning={true}
+						onClick={props.handleClick}
+					>
 						<RiArrowUpLine size={18} />
 						<div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
 							<div className="relative h-full w-10 bg-white/20"></div>
