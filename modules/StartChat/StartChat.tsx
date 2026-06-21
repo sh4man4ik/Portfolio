@@ -22,7 +22,7 @@ export default function StartChat() {
 
 			gsap.to(inputRef.current, {
 				y: window.innerHeight - inputRef.current.getBoundingClientRect().bottom - 20,
-				duration: 0.4,
+				duration: 0.3,
 				ease: 'back.in'
 			});
 		}
