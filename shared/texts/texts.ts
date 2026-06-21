@@ -1,5 +1,6 @@
 const EN_TEXTS = {
-	title: 'Portfolio',
+	title: 'Portfolio | sh4man',
+	description: "This is sh4man's portfolio in the form of artificial intelligence",
 	pageError: {
 		notFound: {
 			title: 'Page Not Found',

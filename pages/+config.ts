@@ -12,7 +12,7 @@ gsap.registerPlugin(useGSAP);
 const config: Config = {
 	// https://vike.dev/head-tags
 	title: getText('title'),
-	description: '',
+	description: getText('description'),
 
 	extends: [vikeReact],
 

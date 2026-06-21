@@ -1,8 +1,12 @@
 // https://vike.dev/Head
 
+import logoUrl from '../assets/logo.png';
+
 export function Head() {
 	return (
 		<>
+			<link rel="icon" href={logoUrl} />
+
 			<link rel="preconnect" href="https://fonts.googleapis.com" />
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 			<link
