@@ -1,5 +1,6 @@
 import Blur from '../../components/Blur';
 import Input from './components/Input';
+import SplitText from 'gsap/SplitText';
 import Title from './components/Title';
 import getText from '../../shared/texts/texts';
 import gsap from 'gsap';
@@ -24,11 +25,19 @@ export default function StartChat() {
 				window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
 			}, 100);
 
-			gsap.from(textRef.current, {
-				opacity: 0,
-				duration: 0.5,
-				y: 5,
-				ease: 'sine.in'
+			SplitText.create(textRef.current, {
+				type: 'lines, words',
+				mask: 'lines',
+				autoSplit: true,
+				onSplit(self: any) {
+					return gsap.from(self.words, {
+						opacity: 0,
+						duration: 0.3,
+						ease: 'sine.in',
+						stagger: 0.05,
+						onComplete: () => self.revert()
+					});
+				}
 			});
 		}
 	}, [textValue]);
