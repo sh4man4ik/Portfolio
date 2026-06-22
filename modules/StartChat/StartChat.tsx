@@ -3,6 +3,7 @@ import Input from './components/Input';
 import Title from './components/Title';
 import getText from '../../shared/texts/texts';
 import gsap from 'gsap';
+import parse from 'html-react-parser';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 import { useState } from 'react';
@@ -89,7 +90,7 @@ export default function StartChat() {
 									ref={textRef}
 									className="bg-base-200 rounded-lg pt-[10px] pb-[10px] pl-[15px] pr-[15px] whitespace-pre-wrap mb-[20px]"
 								>
-									{text}
+									{parse(text)}
 								</div>
 							))}
 						</div>
