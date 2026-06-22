@@ -90,7 +90,7 @@ export default function StartChat() {
 			<div ref={containerRef}>
 				<div className="grid h-dvh place-items-center w-full">
 					<div
-						className={`${isHidden ? 'visible' : 'invisible'} medium-font break-word max-w-[500px] w-[86%] pt-[20px] pb-[140px] absolute top-[0px] left-1/2 -translate-x-1/2`}
+						className={`${isHidden ? 'visible' : 'invisible'} medium-font break-word max-w-[600px] w-[90%] pt-[20px] pb-[140px] absolute top-[0px] left-1/2 -translate-x-1/2`}
 					>
 						<div>
 							{textValue.map((text, i) => (
