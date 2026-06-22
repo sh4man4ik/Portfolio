@@ -110,7 +110,7 @@ export default function StartChat() {
 							<Title></Title>
 						</div>
 
-						<div ref={inputRef} className="place-items-center w-full">
+						<div ref={inputRef} className="grid place-items-center w-full">
 							<Input setSelectValue={setSelectValue} handleClick={handleClick}></Input>
 						</div>
 					</div>
