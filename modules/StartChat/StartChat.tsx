@@ -1,10 +1,11 @@
 import Blur from '../../components/Blur';
 import Input from './components/Input';
+import Markdown from 'react-markdown';
 import SplitText from 'gsap/SplitText';
 import Title from './components/Title';
 import getText from '../../shared/texts/texts';
 import gsap from 'gsap';
-import parse from 'html-react-parser';
+import request from './helpers/request';
 import textGsap from './animations/textGsap';
 import titleInputGsap from './animations/titleInputGsap';
 import { useGSAP } from '@gsap/react';
@@ -18,6 +19,7 @@ export default function StartChat() {
 	const textRef = useRef<HTMLDivElement>(null);
 
 	let [isHidden, setIsHidden] = useState(false);
+	let [inputValue, setInputValue] = useState('');
 	let [textValue, setTextValue] = useState<string[]>([]);
 	let [selectValue, setSelectValue] = useState(getText('startChat.select.options.first'));
 
@@ -29,26 +31,42 @@ export default function StartChat() {
 		titleInputGsap(gsap, isHidden, titleRef, inputRef);
 	}, [isHidden]);
 
-	let handleClick = () => {
-		switch (selectValue) {
-			case getText('startChat.select.options.first'):
-				setTextValue((previous) => [...previous, getText('portfolio.aboutMe')]);
-				break;
-			case getText('startChat.select.options.second'):
-				setTextValue((previous) => [...previous, getText('portfolio.skills')]);
-				break;
-			case getText('startChat.select.options.third'):
-				setTextValue((previous) => [...previous, getText('portfolio.education')]);
-				break;
-			case getText('startChat.select.options.fourth'):
-				setTextValue((previous) => [...previous, getText('portfolio.contactMe')]);
-				break;
-			default:
-				setTextValue((previous) => [...previous, getText('portfolio.aboutMe')]);
-				break;
-		}
+	let handleClick = async () => {
+		if (inputValue) {
+			const firstOption = getText('startChat.select.options.first');
+			const aboutMeContext = getText('portfolio.aboutMe');
 
-		setIsHidden(true);
+			const secondOption = getText('startChat.select.options.second');
+			const skillsContext = getText('portfolio.skills');
+
+			const thirdOption = getText('startChat.select.options.third');
+			const educationContext = getText('portfolio.education');
+
+			const fourthOption = getText('startChat.select.options.fourth');
+			const contactMeContext = getText('portfolio.contactMe');
+
+			const noContext = getText('portfolio.noContext');
+
+			switch (selectValue) {
+				case firstOption:
+					request(inputValue, setInputValue, setTextValue, aboutMeContext);
+					break;
+				case secondOption:
+					request(inputValue, setInputValue, setTextValue, skillsContext);
+					break;
+				case thirdOption:
+					request(inputValue, setInputValue, setTextValue, educationContext);
+					break;
+				case fourthOption:
+					request(inputValue, setInputValue, setTextValue, contactMeContext);
+					break;
+				default:
+					request(inputValue, setInputValue, setTextValue, noContext);
+					break;
+			}
+
+			setIsHidden(true);
+		}
 	};
 
 	return (
@@ -65,7 +83,7 @@ export default function StartChat() {
 									ref={textRef}
 									className="bg-base-200 rounded-lg pt-[10px] pb-[10px] pl-[15px] pr-[15px] whitespace-pre-wrap mb-[20px]"
 								>
-									{parse(text)}
+									<Markdown>{text}</Markdown>
 								</div>
 							))}
 						</div>
@@ -77,7 +95,12 @@ export default function StartChat() {
 						</div>
 
 						<div ref={inputRef} className="grid place-items-center w-full">
-							<Input setSelectValue={setSelectValue} handleClick={handleClick}></Input>
+							<Input
+								setSelectValue={setSelectValue}
+								inputValue={inputValue}
+								setInputValue={setInputValue}
+								handleClick={handleClick}
+							></Input>
 						</div>
 					</div>
 				</div>

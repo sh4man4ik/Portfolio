@@ -10,6 +10,8 @@ export default function Input(props: any) {
 					placeholder={getText('startChat.input.placeholder')}
 					className="input border-none outline-none bg-transparent medium-font w-full"
 					suppressHydrationWarning={true}
+					value={props.inputValue}
+					onChange={(event) => props.setInputValue(event.target.value)}
 				/>
 				<div className="flex justify-between">
 					<select

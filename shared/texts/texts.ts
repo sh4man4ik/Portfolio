@@ -32,7 +32,9 @@ const EN_TEXTS = {
 
 		education: `🎓 <strong>Jõhvi Upper Secondary School (Jõhvi Gümnaasium), Jõhvi, Estonia</strong><br>📅 <em>September 2024 – Present</em><br>📖 Currently studying in upper secondary school with a focus on IT education.<br><br>🎓 <strong>Sillamäe Estonian Basic School (Sillamäe Eesti Põhikool), Sillamäe, Estonia</strong><br>📅 <em>September 2015 – June 2024</em><br>📖 Completed 9-year basic education program in accordance with the Estonian national curriculum.`,
 
-		contactMe: `You can reach out to me via:<br>• 📧 <a href="mailto:daniil.ignatjev@gmail.com" target="_blank" rel="noreferrer"><u>Email</u></a><br>• ✈️ <a href="https://t.me/sh4man4ikk" target="_blank" rel="noreferrer"><u>Telegram</u></a><br>• 💬 <a href="https://discord.com/users/1263492247681237012" target="_blank" rel="noreferrer"><u>Discord</u></a><br>• 💼 <a href="https://www.linkedin.com/in/daniil-i-64b118314" target="_blank" rel="noreferrer"><u>LinkedIn</u></a><br>• 🐈‍⬛ <a href="https://github.com/sh4man4ik" target="_blank" rel="noreferrer"><u>GitHub</u></a>`
+		contactMe: `You can reach out to me via:<br>• 📧 <a href="mailto:daniil.ignatjev@gmail.com" target="_blank" rel="noreferrer"><u>Email</u></a><br>• ✈️ <a href="https://t.me/sh4man4ikk" target="_blank" rel="noreferrer"><u>Telegram</u></a><br>• 💬 <a href="https://discord.com/users/1263492247681237012" target="_blank" rel="noreferrer"><u>Discord</u></a><br>• 💼 <a href="https://www.linkedin.com/in/daniil-i-64b118314" target="_blank" rel="noreferrer"><u>LinkedIn</u></a><br>• 🐈‍⬛ <a href="https://github.com/sh4man4ik" target="_blank" rel="noreferrer"><u>GitHub</u></a>`,
+
+		noContext: ''
 	}
 };
 
