@@ -39,10 +39,12 @@ export default function StartChat() {
 	}, [canAsk]);
 
 	let handleClick = async () => {
-		setIsHidden(true);
-
 		if (inputValue && canAsk) {
+			setIsHidden(true);
 			setCanAsk(false);
+
+			inputValue = inputValue.trim();
+			setTextValue((previous: any) => [...previous, inputValue]);
 
 			const firstOption = getText('startChat.select.options.first');
 			const aboutMeContext = getText('portfolio.aboutMe');
@@ -67,19 +69,19 @@ export default function StartChat() {
 
 			switch (selectValue) {
 				case firstOption:
-					await request(inputValue, setInputValue, setTextValue, aboutMeContext, allContext);
+					await request(inputValue, setInputValue, setTextValue, aboutMeContext);
 					break;
 				case secondOption:
-					await request(inputValue, setInputValue, setTextValue, skillsContext, allContext);
+					await request(inputValue, setInputValue, setTextValue, skillsContext);
 					break;
 				case thirdOption:
-					await request(inputValue, setInputValue, setTextValue, educationContext, allContext);
+					await request(inputValue, setInputValue, setTextValue, educationContext);
 					break;
 				case fourthOption:
-					await request(inputValue, setInputValue, setTextValue, contactMeContext, allContext);
+					await request(inputValue, setInputValue, setTextValue, contactMeContext);
 					break;
 				default:
-					await request(inputValue, setInputValue, setTextValue, allContext, allContext);
+					await request(inputValue, setInputValue, setTextValue, allContext);
 					break;
 			}
 

@@ -1,13 +1,7 @@
 import getAnswer from '../api/getAnswer';
 import getText from '../../../shared/texts/texts';
 
-export default async function request(
-	inputValue: any,
-	setInputValue: any,
-	setTextValue: any,
-	context: string,
-	allContext: string
-) {
+export default async function request(inputValue: any, setInputValue: any, setTextValue: any, context: string) {
 	setInputValue('');
 
 	let message = String(
@@ -15,11 +9,11 @@ export default async function request(
 	);
 
 	try {
-		let response = String(await getAnswer(message, allContext));
+		let response = String(await getAnswer(message, context));
 		setTextValue((previous: any) => [...previous, String(response)]);
 	} catch (error) {
 		console.log(error);
 
-		setTextValue((previous: any) => [...previous, getText('error') + allContext]);
+		setTextValue((previous: any) => [...previous, getText('error') + context]);
 	}
 }
