@@ -37,8 +37,6 @@ export default function StartChat() {
 		setIsHidden(true);
 
 		if (inputValue && canAsk) {
-			console.log('Question asked!');
-
 			setCanAsk(false);
 
 			const firstOption = getText('startChat.select.options.first');
