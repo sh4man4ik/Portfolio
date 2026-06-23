@@ -7,6 +7,7 @@ import gsap from 'gsap';
 import parse from 'html-react-parser';
 import request from './helpers/request';
 import textGsap from './animations/textGsap';
+import thinkingGsap from './animations/thinkingGsap';
 import titleInputGsap from './animations/titleInputGsap';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
@@ -32,6 +33,10 @@ export default function StartChat() {
 	useGSAP(() => {
 		titleInputGsap(gsap, isHidden, titleRef, inputRef);
 	}, [isHidden]);
+
+	useGSAP(() => {
+		thinkingGsap();
+	}, [canAsk]);
 
 	let handleClick = async () => {
 		setIsHidden(true);
@@ -62,19 +67,19 @@ export default function StartChat() {
 
 			switch (selectValue) {
 				case firstOption:
-					await request(inputValue, setInputValue, setTextValue, aboutMeContext);
+					await request(inputValue, setInputValue, setTextValue, aboutMeContext, allContext);
 					break;
 				case secondOption:
-					await request(inputValue, setInputValue, setTextValue, skillsContext);
+					await request(inputValue, setInputValue, setTextValue, skillsContext, allContext);
 					break;
 				case thirdOption:
-					await request(inputValue, setInputValue, setTextValue, educationContext);
+					await request(inputValue, setInputValue, setTextValue, educationContext, allContext);
 					break;
 				case fourthOption:
-					await request(inputValue, setInputValue, setTextValue, contactMeContext);
+					await request(inputValue, setInputValue, setTextValue, contactMeContext, allContext);
 					break;
 				default:
-					await request(inputValue, setInputValue, setTextValue, allContext);
+					await request(inputValue, setInputValue, setTextValue, allContext, allContext);
 					break;
 			}
 
@@ -99,6 +104,13 @@ export default function StartChat() {
 									{parse(text)}
 								</div>
 							))}
+						</div>
+						<div>
+							{!canAsk ? (
+								<span className="loading loading-dots loading-lg ml-[15px] mb-[30px] mt-[5px]"></span>
+							) : (
+								<></>
+							)}
 						</div>
 					</div>
 					<div className="grid gap-[30px] place-items-center w-full">
