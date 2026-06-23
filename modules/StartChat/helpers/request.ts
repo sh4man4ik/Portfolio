@@ -8,6 +8,12 @@ export default async function request(inputValue: any, setInputValue: any, setTe
 		getText('instructions') + '\n\n### USER QUESTION:\n' + inputValue + '\n\n### CONTEXT:\n' + context
 	);
 
-	let response = await getAnswer(message);
-	setTextValue((previous: any) => [...previous, String(response)]);
+	try {
+		let response = String(await getAnswer(message));
+		setTextValue((previous: any) => [...previous, String(response)]);
+	} catch (error) {
+		console.log(error);
+
+		setTextValue((previous: any) => [...previous, getText('error')]);
+	}
 }
