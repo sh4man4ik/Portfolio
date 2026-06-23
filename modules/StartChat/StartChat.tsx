@@ -23,6 +23,8 @@ export default function StartChat() {
 	let [textValue, setTextValue] = useState<string[]>([]);
 	let [selectValue, setSelectValue] = useState(getText('startChat.select.options.first'));
 
+	let [canAsk, setCanAsk] = useState(true);
+
 	useGSAP(() => {
 		textGsap(gsap, SplitText, isHidden, textValue, textRef);
 	}, [textValue]);
@@ -32,7 +34,13 @@ export default function StartChat() {
 	}, [isHidden]);
 
 	let handleClick = async () => {
-		if (inputValue) {
+		setIsHidden(true);
+
+		if (inputValue && canAsk) {
+			console.log('Question asked!');
+
+			setCanAsk(false);
+
 			const firstOption = getText('startChat.select.options.first');
 			const aboutMeContext = getText('portfolio.aboutMe');
 
@@ -56,23 +64,23 @@ export default function StartChat() {
 
 			switch (selectValue) {
 				case firstOption:
-					request(inputValue, setInputValue, setTextValue, aboutMeContext);
+					await request(inputValue, setInputValue, setTextValue, aboutMeContext);
 					break;
 				case secondOption:
-					request(inputValue, setInputValue, setTextValue, skillsContext);
+					await request(inputValue, setInputValue, setTextValue, skillsContext);
 					break;
 				case thirdOption:
-					request(inputValue, setInputValue, setTextValue, educationContext);
+					await request(inputValue, setInputValue, setTextValue, educationContext);
 					break;
 				case fourthOption:
-					request(inputValue, setInputValue, setTextValue, contactMeContext);
+					await request(inputValue, setInputValue, setTextValue, contactMeContext);
 					break;
 				default:
-					request(inputValue, setInputValue, setTextValue, allContext);
+					await request(inputValue, setInputValue, setTextValue, allContext);
 					break;
 			}
 
-			setIsHidden(true);
+			setCanAsk(true);
 		}
 	};
 
