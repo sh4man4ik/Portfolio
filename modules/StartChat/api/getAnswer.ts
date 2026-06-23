@@ -1,4 +1,4 @@
-export default async function getAnswer(inputValue: string, context: string) {
+export default async function getAnswer(message: string) {
 	const API_KEY = import.meta.env.PUBLIC_ENV__OPENROUTER_API_KEY;
 
 	let response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
@@ -12,7 +12,7 @@ export default async function getAnswer(inputValue: string, context: string) {
 			messages: [
 				{
 					role: 'user',
-					content: inputValue + ' Context: ' + context
+					content: message
 				}
 			],
 			reasoning: { enabled: true }

@@ -1,10 +1,10 @@
 import Blur from '../../components/Blur';
 import Input from './components/Input';
-import Markdown from 'react-markdown';
 import SplitText from 'gsap/SplitText';
 import Title from './components/Title';
 import getText from '../../shared/texts/texts';
 import gsap from 'gsap';
+import parse from 'html-react-parser';
 import request from './helpers/request';
 import textGsap from './animations/textGsap';
 import titleInputGsap from './animations/titleInputGsap';
@@ -45,7 +45,14 @@ export default function StartChat() {
 			const fourthOption = getText('startChat.select.options.fourth');
 			const contactMeContext = getText('portfolio.contactMe');
 
-			const noContext = getText('portfolio.noContext');
+			const allContext =
+				aboutMeContext +
+				'<br><br>' +
+				skillsContext +
+				'<br><br>' +
+				educationContext +
+				'<br><br>' +
+				contactMeContext;
 
 			switch (selectValue) {
 				case firstOption:
@@ -61,7 +68,7 @@ export default function StartChat() {
 					request(inputValue, setInputValue, setTextValue, contactMeContext);
 					break;
 				default:
-					request(inputValue, setInputValue, setTextValue, noContext);
+					request(inputValue, setInputValue, setTextValue, allContext);
 					break;
 			}
 
@@ -81,9 +88,9 @@ export default function StartChat() {
 								<div
 									key={i}
 									ref={textRef}
-									className="bg-base-200 rounded-lg pt-[10px] pb-[10px] pl-[15px] pr-[15px] whitespace-pre-wrap mb-[20px]"
+									className="bg-base-200 rounded-lg pt-[10px] pb-[10px] pl-[15px] pr-[15px] mb-[20px] whitespace-pre-wrap"
 								>
-									<Markdown>{text}</Markdown>
+									{parse(text)}
 								</div>
 							))}
 						</div>
