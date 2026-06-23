@@ -8,7 +8,7 @@ The website can be accessed at https://portfolio-sh4man.vercel.app
 
 # Tech stack
 
-The following technologies are used to develop the website: **TypeScript**, **React**, **Tailwind CSS**, **daisyUI**, **GSAP**, **Vite**, **Vike**, **Remix Icon**, **Google Fonts** and **html-react-parser**
+The following technologies are used to develop the website: **TypeScript**, **React**, **Tailwind CSS**, **daisyUI**, **GSAP**, **Vite**, **Vike**, **Remix Icon**, **Google Fonts** and **react-markdown**
 
 # Facts about the website
 
