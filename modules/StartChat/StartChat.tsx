@@ -5,6 +5,8 @@ import Title from './components/Title';
 import getText from '../../shared/texts/texts';
 import gsap from 'gsap';
 import parse from 'html-react-parser';
+import textGsap from './animations/textGsap';
+import titleInputGsap from './animations/titleInputGsap';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 import { useState } from 'react';
@@ -20,47 +22,11 @@ export default function StartChat() {
 	let [selectValue, setSelectValue] = useState(getText('startChat.select.options.first'));
 
 	useGSAP(() => {
-		if (isHidden && textValue) {
-			setTimeout(() => {
-				window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
-			}, 100);
-
-			SplitText.create(textRef.current, {
-				type: 'lines, words',
-				mask: 'lines',
-				autoSplit: true,
-				onSplit(self: any) {
-					return gsap.from(self.words, {
-						opacity: 0,
-						duration: 0.3,
-						ease: 'sine.in',
-						stagger: 0.05,
-						onComplete: () => self.revert()
-					});
-				}
-			});
-		}
+		textGsap(gsap, SplitText, isHidden, textValue, textRef);
 	}, [textValue]);
 
 	useGSAP(() => {
-		if (isHidden && titleRef.current && inputRef.current) {
-			gsap.to(titleRef.current, {
-				opacity: 0,
-				duration: 0.1
-			});
-			gsap.to(inputRef.current, {
-				y: window.innerHeight - inputRef.current.getBoundingClientRect().bottom,
-				duration: 0.3,
-				ease: 'back.in',
-				onComplete: () => {
-					gsap.set(inputRef.current, {
-						position: 'fixed',
-						bottom: 0,
-						y: 0
-					});
-				}
-			});
-		}
+		titleInputGsap(gsap, isHidden, titleRef, inputRef);
 	}, [isHidden]);
 
 	let handleClick = () => {
