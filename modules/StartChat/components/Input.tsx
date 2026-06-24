@@ -1,7 +1,16 @@
 import { RiArrowUpLine } from '@remixicon/react';
 import getText from '../../../shared/texts/texts';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 export default function Input(props: any) {
+	// Re-Render
+	const [, forceUpdate] = useState(0);
+
+	useEffect(() => {
+		forceUpdate((n) => n + 1);
+	}, []);
+
 	return (
 		<>
 			<div className="grid pt-[10px] p-[15px] bg-base-200 rounded-xl gap-[15px] max-w-[500px] w-[80%] mb-[20px] shadow-[0px_-3px_25px_6px_rgba(0,_0,_0,_0.6)]">
@@ -15,9 +24,9 @@ export default function Input(props: any) {
 				/>
 				<div className="flex justify-between">
 					<select
-						defaultValue={getText('startChat.select.options.first')}
 						className="select outline-none border-none w-fit rounded-lg small-font bg-base-300"
 						suppressHydrationWarning={true}
+						value={props.selectValue}
 						onChange={(event) => props.setSelectValue(event.target.value)}
 					>
 						<option>{getText('startChat.select.options.first')}</option>
