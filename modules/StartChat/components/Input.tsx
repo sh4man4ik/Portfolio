@@ -30,10 +30,11 @@ export default function Input(props: any) {
 							value={props.selectValue}
 							onChange={(event) => props.setSelectValue(event.target.value)}
 						>
-							<option>{getText('startChat.select.options.first')}</option>
-							<option>{getText('startChat.select.options.second')}</option>
-							<option>{getText('startChat.select.options.third')}</option>
-							<option>{getText('startChat.select.options.fourth')}</option>
+							<option>{getText('startChat.select.options.overview')}</option>
+							<option>{getText('startChat.select.options.aboutMe')}</option>
+							<option>{getText('startChat.select.options.skills')}</option>
+							<option>{getText('startChat.select.options.education')}</option>
+							<option>{getText('startChat.select.options.contactMe')}</option>
 						</select>
 
 						<button
