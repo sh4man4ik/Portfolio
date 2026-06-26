@@ -11,7 +11,7 @@ export default async function getAnswer(message: string, context: string) {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-				model: 'cohere/north-mini-code:free',
+				model: 'nvidia/nemotron-3-super-120b-a12b:free',
 				messages: [
 					{
 						role: 'user',
