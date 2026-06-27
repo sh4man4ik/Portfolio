@@ -105,7 +105,7 @@ export default function StartChat() {
 								<div
 									key={i}
 									ref={textRef}
-									className="bg-base-200 rounded-lg pt-[10px] pb-[10px] pl-[15px] pr-[15px] mb-[20px] whitespace-pre-wrap"
+									className="bg-base-200 rounded-lg pt-[10px] pb-[10px] pl-[15px] pr-[15px] mb-[20px] whitespace-pre-wrap wrap-anywhere"
 								>
 									{parse(text)}
 								</div>
