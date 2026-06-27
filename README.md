@@ -6,9 +6,9 @@ This is sh4man's portfolio built as an AI chat
 
 The website can be accessed at https://portfolio-sh4man.vercel.app
 
-# Tech stack
+# Tech Stack
 
-The following technologies are used to develop the website: **TypeScript**, **React**, **Tailwind CSS**, **daisyUI**, **GSAP**, **Vite**, **Vike**, **Remix Icon**, **OpenRouter**, **Google Fonts** and **react-markdown**
+The following technologies are used to develop the website: **TypeScript**, **React**, **Tailwind CSS (daisyUI)**, **Vike**, **OpenRouter**, **GSAP** and **react-markdown**.
 
 # Facts about the website
 
