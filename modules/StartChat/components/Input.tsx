@@ -32,8 +32,10 @@ export default function Input(props: any) {
 						>
 							<option>{getText('startChat.select.options.overview')}</option>
 							<option>{getText('startChat.select.options.aboutMe')}</option>
-							<option>{getText('startChat.select.options.skills')}</option>
 							<option>{getText('startChat.select.options.education')}</option>
+							<option>{getText('startChat.select.options.languages')}</option>
+							<option>{getText('startChat.select.options.techStack')}</option>
+							<option>{getText('startChat.select.options.projects')}</option>
 							<option>{getText('startChat.select.options.contactMe')}</option>
 						</select>
 

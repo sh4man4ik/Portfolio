@@ -49,11 +49,17 @@ export default function StartChat() {
 			const aboutMeOption = getText('startChat.select.options.aboutMe');
 			const aboutMeContext = getText('portfolio.aboutMe');
 
-			const skillsOption = getText('startChat.select.options.skills');
-			const skillsContext = getText('portfolio.skills');
-
 			const educationOption = getText('startChat.select.options.education');
 			const educationContext = getText('portfolio.education');
+
+			const languagesOption = getText('startChat.select.options.languages');
+			const languagesContext = getText('portfolio.languages');
+
+			const techStackOption = getText('startChat.select.options.techStack');
+			const techStackContext = getText('portfolio.techStack');
+
+			const projectsOption = getText('startChat.select.options.projects');
+			const projectsContext = getText('portfolio.projects');
 
 			const contactMeOption = getText('startChat.select.options.contactMe');
 			const contactMeContext = getText('portfolio.contactMe');
@@ -62,9 +68,13 @@ export default function StartChat() {
 			const overviewContext =
 				aboutMeContext +
 				'<br><br>' +
-				skillsContext +
-				'<br><br>' +
 				educationContext +
+				'<br><br>' +
+				languagesContext +
+				'<br><br>' +
+				techStackContext +
+				'<br><br>' +
+				projectsContext +
 				'<br><br>' +
 				contactMeContext;
 
@@ -75,11 +85,17 @@ export default function StartChat() {
 				case aboutMeOption:
 					await request(inputValue, setInputValue, setTextValue, aboutMeContext);
 					break;
-				case skillsOption:
-					await request(inputValue, setInputValue, setTextValue, skillsContext);
-					break;
 				case educationOption:
 					await request(inputValue, setInputValue, setTextValue, educationContext);
+					break;
+				case languagesOption:
+					await request(inputValue, setInputValue, setTextValue, languagesContext);
+					break;
+				case techStackOption:
+					await request(inputValue, setInputValue, setTextValue, techStackContext);
+					break;
+				case projectsOption:
+					await request(inputValue, setInputValue, setTextValue, projectsContext);
 					break;
 				case contactMeOption:
 					await request(inputValue, setInputValue, setTextValue, contactMeContext);
