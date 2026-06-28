@@ -13,7 +13,7 @@ import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 import { useState } from 'react';
 
-export default function StartChat() {
+export default function Chat() {
 	const containerRef = useRef<HTMLDivElement>(null);
 	const titleRef = useRef<HTMLDivElement>(null);
 	const inputRef = useRef<HTMLDivElement>(null);
