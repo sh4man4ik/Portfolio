@@ -1,5 +1,5 @@
 import { RiArrowUpLine } from '@remixicon/react';
-import getText from '../../../shared/texts/texts';
+import getText from '../../../shared/texts/chat';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
@@ -23,22 +23,7 @@ export default function Input(props: any) {
 						value={props.inputValue}
 						onChange={(event) => props.setInputValue(event.target.value)}
 					/>
-					<div className="flex justify-between">
-						<select
-							className="select outline-none border-none w-fit rounded-lg small-font bg-base-300"
-							suppressHydrationWarning={true}
-							value={props.selectValue}
-							onChange={(event) => props.setSelectValue(event.target.value)}
-						>
-							<option>{getText('startChat.select.options.overview')}</option>
-							<option>{getText('startChat.select.options.aboutMe')}</option>
-							<option>{getText('startChat.select.options.education')}</option>
-							<option>{getText('startChat.select.options.languages')}</option>
-							<option>{getText('startChat.select.options.techStack')}</option>
-							<option>{getText('startChat.select.options.projects')}</option>
-							<option>{getText('startChat.select.options.contactMe')}</option>
-						</select>
-
+					<div className="flex justify-end">
 						<button
 							className="group/button relative inline-flex items-center justify-center overflow-hidden rounded-lg bg-[#8E3E63] px-6 py-2 text-base font-semibold text-white transition-all duration-300 ease-in-out hover:scale-110 border-none"
 							suppressHydrationWarning={true}

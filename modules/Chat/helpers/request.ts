@@ -1,5 +1,5 @@
 import getAnswer from '../api/getAnswer';
-import getText from '../../../shared/texts/texts';
+import getText from '../../../shared/texts/chat';
 
 export default async function request(inputValue: any, setInputValue: any, setTextValue: any, context: string) {
 	setInputValue('');
@@ -14,6 +14,6 @@ export default async function request(inputValue: any, setInputValue: any, setTe
 	} catch (error) {
 		console.log(error);
 
-		setTextValue((previous: any) => [...previous, getText('error') + context]);
+		setTextValue((previous: any) => [...previous, getText('error')]);
 	}
 }

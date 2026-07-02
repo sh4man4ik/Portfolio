@@ -2,7 +2,7 @@ import Blur from '../../components/Blur';
 import Input from './components/Input';
 import SplitText from 'gsap/SplitText';
 import Title from './components/Title';
-import getText from '../../shared/texts/texts';
+import getText from '../../shared/texts/chat';
 import gsap from 'gsap';
 import parse from 'html-react-parser';
 import request from './helpers/request';
@@ -46,64 +46,9 @@ export default function Chat() {
 			inputValue = inputValue.trim();
 			setTextValue((previous: any) => [...previous, inputValue]);
 
-			const aboutMeOption = getText('startChat.select.options.aboutMe');
-			const aboutMeContext = getText('portfolio.aboutMe');
+			const context = getText('portfolio.context');
 
-			const educationOption = getText('startChat.select.options.education');
-			const educationContext = getText('portfolio.education');
-
-			const languagesOption = getText('startChat.select.options.languages');
-			const languagesContext = getText('portfolio.languages');
-
-			const techStackOption = getText('startChat.select.options.techStack');
-			const techStackContext = getText('portfolio.techStack');
-
-			const projectsOption = getText('startChat.select.options.projects');
-			const projectsContext = getText('portfolio.projects');
-
-			const contactMeOption = getText('startChat.select.options.contactMe');
-			const contactMeContext = getText('portfolio.contactMe');
-
-			const overviewOption = getText('startChat.select.options.overview');
-			const overviewContext =
-				aboutMeContext +
-				'<br><br>' +
-				educationContext +
-				'<br><br>' +
-				languagesContext +
-				'<br><br>' +
-				techStackContext +
-				'<br><br>' +
-				projectsContext +
-				'<br><br>' +
-				contactMeContext;
-
-			switch (selectValue) {
-				case overviewOption:
-					await request(inputValue, setInputValue, setTextValue, overviewContext);
-					break;
-				case aboutMeOption:
-					await request(inputValue, setInputValue, setTextValue, aboutMeContext);
-					break;
-				case educationOption:
-					await request(inputValue, setInputValue, setTextValue, educationContext);
-					break;
-				case languagesOption:
-					await request(inputValue, setInputValue, setTextValue, languagesContext);
-					break;
-				case techStackOption:
-					await request(inputValue, setInputValue, setTextValue, techStackContext);
-					break;
-				case projectsOption:
-					await request(inputValue, setInputValue, setTextValue, projectsContext);
-					break;
-				case contactMeOption:
-					await request(inputValue, setInputValue, setTextValue, contactMeContext);
-					break;
-				default:
-					await request(inputValue, setInputValue, setTextValue, overviewContext);
-					break;
-			}
+			await request(inputValue, setInputValue, setTextValue, context);
 
 			setCanAsk(true);
 		}

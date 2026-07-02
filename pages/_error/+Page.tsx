@@ -1,4 +1,4 @@
-import getText from '../../shared/texts/texts';
+import getText from '../../shared/texts/website';
 import { usePageContext } from 'vike-react/usePageContext';
 
 export default function Page() {

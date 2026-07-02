@@ -1,6 +1,6 @@
 import type { Config } from 'vike/types';
 import SplitText from 'gsap/SplitText';
-import getText from '../shared/texts/texts';
+import getText from '../shared/texts/website';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import vikeReact from 'vike-react/config';

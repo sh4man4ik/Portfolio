@@ -1,4 +1,4 @@
-import getText from '../../../shared/texts/texts';
+import getText from '../../../shared/texts/chat';
 
 export default function Title() {
 	return (

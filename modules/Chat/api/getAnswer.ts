@@ -1,4 +1,4 @@
-import getText from '../../../shared/texts/texts';
+import getText from '../../../shared/texts/chat';
 
 export default async function getAnswer(message: string, context: string) {
 	const API_KEY = import.meta.env.PUBLIC_ENV__OPENROUTER_API_KEY;
@@ -29,6 +29,6 @@ export default async function getAnswer(message: string, context: string) {
 	} catch (error) {
 		console.log(error);
 
-		return getText('error') + context;
+		return getText('error');
 	}
 }
